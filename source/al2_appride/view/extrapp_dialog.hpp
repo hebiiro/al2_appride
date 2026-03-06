@@ -12,7 +12,7 @@ namespace apn::appride::view
 		//
 		virtual void on_init_dialog() override
 		{
-			init_combobox(idc_exit_mode, L"ウィンドウを閉じる", L"プロセスを強制終了する");
+			init_combobox(idc_exit_mode, tr(L"ウィンドウを閉じる"), tr(L"プロセスを強制終了する"));
 
 			using namespace my::layout;
 
@@ -83,12 +83,17 @@ namespace apn::appride::view
 			{
 			case idc_path_ref:
 				{
+					// 翻訳されたタイトルとファイルフィルタを取得します。
+					auto title = (std::wstring)tr(L"exeファイルを選択");
+					auto filter = my::format(L"{/}{/}{/}{/}",
+						tr(L"exeファイル (*.exe)"), L"\0*.exe\0"s,
+						tr(L"すべてのファイル (*.*)"), L"\0*.*\0"s);
+
 					// exeファイルのパスを取得します。
 					auto file_name = get_open_file_name(
 						*this,
-						L"exeファイルを選択",
-						L"exeファイル (*.exe)\0*.exe\0"
-						L"すべてのファイル (*.*)\0*.*\0",
+						title.c_str(),
+						filter.c_str(),
 						get_text(idc_path).c_str());
 					if (file_name.empty()) break;
 

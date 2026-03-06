@@ -116,7 +116,7 @@ namespace apn::appride::view
 			// 選択項目が無効の場合は
 			if (cur_sel >= model::property.nodes.size())
 			{
-				hive.message_box(L"選択項目が無効です");
+				hive.message_box(tr(L"選択項目が無効です"));
 
 				return FALSE;
 			}
@@ -173,7 +173,7 @@ namespace apn::appride::view
 			// 選択項目が無効の場合は
 			if (cur_sel >= model::property.nodes.size())
 			{
-				hive.message_box(L"選択項目が無効です");
+				hive.message_box(tr(L"選択項目が無効です"));
 
 				return FALSE;
 			}
@@ -182,12 +182,13 @@ namespace apn::appride::view
 			const auto& node = model::property.nodes[cur_sel];
 
 			// メッセージボックスに表示するテキストを作成します。
-			auto message_text = my::format(L"{/}{/}{/}",
-				L"「", node->display_name, L"」を削除していいですか？");
+			auto message_text = my::format(L"{/}\n\n{/}",
+				node->display_name, tr(L"この項目を削除していいですか？"));
 
 			// 本当に削除するかどうかをユーザーに確認します。
 			if (IDOK != hive.message_box(message_text, nullptr, MB_OKCANCEL | MB_ICONWARNING))
 			{
+				// ユーザーが拒否した場合は何もしません。
 				return FALSE;
 			}
 
