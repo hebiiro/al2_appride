@@ -1,5 +1,5 @@
 ﻿**下記URLにあるREADME(使い方など)をよく読みながら使用してください。**
 🐍AviUtl2プラグイン総合
 https://github.com/hebiiro/al2
-🐍AviUtl2 外部アプリ前面表示プラグイン 🔖r1 #2026年03月日
+🐍AviUtl2 外部アプリ前面表示プラグイン 🔖r1 2026年03月07日
 https://github.com/hebiiro/al2_appride/tree/release/1

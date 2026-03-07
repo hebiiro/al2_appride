@@ -72,6 +72,7 @@ namespace apn::appride::view
 			dialog.init(idd_extrapp, *this);
 			dialog.set_text(idc_display_name, my::format(
 				L"{/} {/}", L"外部アプリ", model::property.nodes.size() + 1));
+			dialog.set_combobox_index(idc_exit_mode, model::property.c_exit_mode.c_window);
 
 			// ダイアログを表示します。
 			if (IDOK == dialog.do_modal())
