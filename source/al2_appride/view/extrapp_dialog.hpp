@@ -110,7 +110,7 @@ namespace apn::appride::view
 		//
 		inline static std::filesystem::path get_process_image_path(DWORD pid)
 		{
-			my::handle::unique_ptr<> process(::OpenProcess(
+			my::handle::unique_ptr process(::OpenProcess(
 				PROCESS_QUERY_LIMITED_INFORMATION, FALSE, pid));
 			if (!process) return {};
 

@@ -33,7 +33,7 @@ namespace apn::appride::view
 			//
 			// サブプロセスのハンドルです。
 			//
-			my::handle::unique_ptr<> process;
+			my::handle::unique_ptr process;
 
 			//
 			// サブプロセスのウィンドウです。
@@ -43,7 +43,7 @@ namespace apn::appride::view
 			//
 			// サブプロセス用のジョブハンドルです。
 			//
-			my::handle::unique_ptr<> job;
+			my::handle::unique_ptr job;
 		} extrapp;
 
 		//
